@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Description Variables</title>
+</head>
+<body>
+
+<p align="center"> <b>Date_mean</b> </p>
+    <table align="center">
+                <tr>
+                    {% for x in date_mean.index %}
+                        <th> {{ x }} </th>
+                    {% endfor %}
+                </tr>
+                <tr>
+                        {% for i in date_mean.values %}
+                             <td> {{ i[0] }} </td>
+                        {% endfor %}
+                </tr>
+    </table>
+
+<p align="center"> <b>Date_std</b> </p>
+<table align="center">
+                <tr align="center">
+                    {% for x in date_std.index %}
+                        <th> {{ x }} </th>
+                    {% endfor %}
+                </tr>
+                <tr align="center">
+                        {% for i in date_std.values %}
+                             <td> {{ i[0] }} </td>
+                        {% endfor %}
+                </tr>
+    </table>
+
+<div id="figure_date_toto"></div>
+
+<p align="center"> <b>Grouped_total</b> </p>
+<table align="center">
+                <tr align="center">
+                    {% for x in grouped_total.index %}
+                        <th> {{ x }} </th>
+                    {% endfor %}
+                </tr>
+                <tr align="center">
+                        {% for i in grouped_total.values %}
+                             <td > {{ i }} </td>
+                        {% endfor %}
+                </tr>
+    </table>
+
+<p align="center"> <b>Percent_tot</b> </p>
+<table align="center">
+                <tr>
+                    {% for x in percent_tot.index %}
+                        <th align="center"> {{ x }} </th>
+                    {% endfor %}
+                </tr>
+                <tr>
+                        {% for i in percent_tot.values %}
+                             <td align="center"> {{ i }} % </td>
+                        {% endfor %}
+                </tr>
+    </table>
+
+<div id="figure_thematique"></div>
+
+<p align="center"> <b>Mean_tot_chaine</b> </p>
+<table align="center">
+                <tr>
+                    {% for x in mean_tot_chaine.index %}
+                        <th align="center"> {{ x }} </th>
+                    {% endfor %}
+                </tr>
+                <tr>
+                        {% for i in mean_tot_chaine.values %}
+                             <td align="center"> {{ i }} </td>
+                        {% endfor %}
+                </tr>
+    </table>
+
+<p align="center"> <b>Std_tot_chaine</b> </p>
+<table align="center">
+                <tr>
+                    {% for x in std_tot_chaine.index %}
+                        <th align="center"> {{ x }} </th>
+                    {% endfor %}
+                </tr>
+                <tr>
+                        {% for i in std_tot_chaine.values %}
+                             <td align="center"> {{ i }} </td>
+                        {% endfor %}
+                </tr>
+    </table>
+
+
+<div id="figure_chaines"></div>
+
+
+    <script src ="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+    <script>let figure_date_toto = document.getElementById('figure_date_toto');
+            Plotly.newPlot(figure_date_toto, {{ figure_date_toto|safe }});
+    </script>
+
+    <script>let figure_thematique = document.getElementById('figure_thematique');
+            Plotly.newPlot(figure_thematique, {{ figure_thematique|safe }});
+    </script>
+
+    <script>let figure_chaines = document.getElementById('figure_chaines');
+            Plotly.newPlot(figure_chaines, {{ figure_chaines|safe }});
+    </script>
+
+</body>
+</html>

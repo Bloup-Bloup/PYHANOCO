@@ -2,8 +2,6 @@
 #####      PROJECT PYHA-NOCO         #####
 ##########################################
 
-- Dézippez l'archive
-
 - Lancez votre IDE favoris
 
 - Ouvrir comme projet main.py
